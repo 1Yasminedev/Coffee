@@ -1,0 +1,59 @@
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #a9714b; /* Marron clair */
+  color: white;
+  width: 160px;
+  height: 160px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.category-btn i {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.category-btn:hover {
+  background-color: #875f3c; /* Marron plus foncé au survol */
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .category-btn {
+    width: 120px;
+    height: 120px;
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .category-btn i {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-btn {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 15px 20px;
+  }
+
+  .category-btn i {
+    margin-bottom: 0;
+    font-size: 26px;
+  }
+}

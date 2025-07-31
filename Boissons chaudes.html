@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Boissons chaudes.css">
+  <link rel="stylesheet" href="ice cofee.css">
+  <link rel="stylesheet" href="acceuil.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>Coffee Shop</h1>
+    <nav id="nav-menu">
+      <a href="acceuil.html">Accueil</a>
+      
+      <!-- Menu déroulant -->
+      <div class="dropdown">
+        <button class="dropbtn">Menu <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="Boissons chaudes.html">Boissons chaudes</a>
+          <a href="ice cofee .html">Ice Cofee</a>
+          <a href="mojito et jus.html">Mojito et Ius</a>
+          <a href="nouveauter.html">Miel</a>
+        </div>
+      </div>
+      
+      <a href="apropos.html">À propos</a>
+      <a href="aviis.html">Avis</a>
+    </nav>
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="products">
+      <!-- Section Espresso -->
+<div class="product-card">
+  <img src="espresso1.jpg" alt="Café Espresso">
+  <div class="product-info">
+    <h3>Café Espresso</h3>
+    <p>8 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="americano.jpg" alt="Café Americano">
+  <div class="product-info">
+    <h3>Café Americano</h3>
+    <p>9 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="amortiser.jpg" alt="Café Aromatisé">
+  <div class="product-info">
+    <h3>Café Aromatisé</h3>
+    <p>10 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="cafee au lait.jpg" alt="Café au Lait">
+  <div class="product-info">
+    <h3>Café au Lait</h3>
+    <p>9 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="lait.jpg" alt="Café au Lait Sirop">
+  <div class="product-info">
+    <h3>Café au Lait Sirop</h3>
+    <p>11 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="chocolat.jpg" alt="Chocolat Chaud">
+  <div class="product-info">
+    <h3>Chocolat Chaud</h3>
+    <p>9 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="cappuchino.jpg" alt="Cappuccino Normal">
+  <div class="product-info">
+    <h3>Cappuccino Normal</h3>
+    <p>10 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="aromatise.jpg" alt="Cappuccino Aromatisé">
+  <div class="product-info">
+    <h3>Cappuccino Aromatisé</h3>
+    <p>12 DH</p>
+  </div>
+</div>
+<!-- Menu déroulant 
+<div class="product-card">
+  <img src="espresso.jpg" alt="Louiza">
+  <div class="product-info">
+    <h3>Louiza</h3>
+    <p>9 DH</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="espresso.jpg" alt="Zaatar">
+  <div class="product-info">
+    <h3>Zaatar</h3>
+    <p>9 DH</p>
+  </div>
+</div>
+-->
+    </section>
+  </main>
+
+ <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Coffee Shop © 2025</h3>
+        <p>32 Lotissement Chems Saada 3, El Jadida</p>
+        <p>📞 +212 6 03 07 96 83</p>
+      </div>
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <a href="https://www.instagram.com/coffee_shill/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Coffee ☕ fait avec ❤️ | Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script pour le menu burger
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      burger.classList.toggle('active');
+    });
+
+    // Script pour le menu déroulant en version mobile
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const dropbtn = dropdown.querySelector('.dropbtn');
+      
+      dropbtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

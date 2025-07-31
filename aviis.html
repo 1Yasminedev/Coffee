@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avis - Coffee Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="avis.css">
+  <link rel="stylesheet" href="acceuil.css">
+
+</head>
+<body>
+  <header class="main-header">
+    <h1>Coffee Shop</h1>
+    <nav id="nav-menu">
+      <a href="acceuil.html">Accueil</a>
+      
+      <!-- Menu déroulant -->
+      <div class="dropdown">
+        <button class="dropbtn">Menu <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="Boissons chaudes.html">Boissons chaudes</a>
+          <a href="ice cofee .html">Ice Cofee</a>
+          <a href="mojito et jus.html">Mojito et Ius</a>
+          <a href="nouveauter.html">Miel</a>
+        </div>
+      </div>
+      
+      <a href="apropos.html">À propos</a>
+      <a href="aviis.html">Avis</a>
+    </nav>
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <header class="page-header">
+    <h1>Vos Avis</h1>
+  </header>
+
+    <section class="review-form">
+      <h2>Donnez votre avis</h2>
+      <form id="avisForm">
+        <div class="form-group">
+          <label for="name">Votre nom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Votre email (ne sera pas affiché)</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Votre note</label>
+          <div class="rating-stars" id="ratingStars">
+            <i class="far fa-star" data-rating="1"></i>
+            <i class="far fa-star" data-rating="2"></i>
+            <i class="far fa-star" data-rating="3"></i>
+            <i class="far fa-star" data-rating="4"></i>
+            <i class="far fa-star" data-rating="5"></i>
+          </div>
+          <input type="hidden" id="rating" name="rating" value="0" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="comment">Votre avis</label>
+          <textarea id="comment" name="comment" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Envoyer l'avis</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Coffee Shop © 2025</h3>
+        <p>32 Lotissement Chems Saada 3, El Jadida</p>
+        <p>📞 +212 6 03 07 96 83</p>
+      </div>
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <a href="https://www.instagram.com/coffee_shill/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Coffee ☕ fait avec ❤️ | Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script pour le menu burger
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      burger.classList.toggle('active');
+    });
+
+    // Script pour le menu déroulant en version mobile
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const dropbtn = dropdown.querySelector('.dropbtn');
+      
+      dropbtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+  
+    // Système d'évaluation par étoiles
+    const stars = document.querySelectorAll('#ratingStars i');
+    const ratingInput = document.getElementById('rating');
+    
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = parseInt(star.getAttribute('data-rating'));
+        ratingInput.value = rating;
+        
+        stars.forEach((s, index) => {
+          if (index < rating) {
+            s.classList.remove('far');
+            s.classList.add('fas', 'active');
+          } else {
+            s.classList.remove('fas', 'active');
+            s.classList.add('far');
+          }
+        });
+      });
+      
+      star.addEventListener('mouseover', () => {
+        const hoverRating = parseInt(star.getAttribute('data-rating'));
+        
+        stars.forEach((s, index) => {
+          if (index < hoverRating) {
+            s.classList.remove('far');
+            s.classList.add('fas');
+          } else {
+            s.classList.remove('fas');
+            s.classList.add('far');
+          }
+        });
+      });
+      
+      star.addEventListener('mouseout', () => {
+        const currentRating = parseInt(ratingInput.value);
+        
+        stars.forEach((s, index) => {
+          if (index < currentRating) {
+            s.classList.remove('far');
+            s.classList.add('fas', 'active');
+          } else {
+            s.classList.remove('fas', 'active');
+            s.classList.add('far');
+          }
+        });
+      });
+    });
+
+    // Gestion du formulaire
+    const avisForm = document.getElementById('avisForm');
+    
+    avisForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      if (ratingInput.value === '0') {
+        alert('Veuillez donner une note');
+        return;
+      }
+      
+      alert('Merci pour votre avis ! Il sera publié après modération.');
+      avisForm.reset();
+      ratingInput.value = '0';
+      stars.forEach(star => {
+        star.classList.remove('fas', 'active');
+        star.classList.add('far');
+      });
+    });
+  </script>
+</body>
+</html>

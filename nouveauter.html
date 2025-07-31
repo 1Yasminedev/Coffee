@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Shop - Nos Miels</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nouveauter.css">
+  <link rel="stylesheet" href="acceuil.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>Coffee Shop</h1>
+    <nav id="nav-menu">
+      <a href="acceuil.html">Accueil</a>
+      
+      <!-- Menu déroulant -->
+      <div class="dropdown">
+        <button class="dropbtn">Menu <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="Boissons chaudes.html">Boissons chaudes</a>
+          <a href="ice cofee .html">Ice Cofee</a>
+          <a href="mojito et jus.html">Mojito et Ius</a>
+          <a href="nouveauter.html">Miel</a>
+        </div>
+      </div>
+      
+      <a href="apropos.html">À propos</a>
+      <a href="aviis.html">Avis</a>
+    </nav>
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="honey-section">
+      <h2 class="honey-title">Nos Miels d'Exception</h2>
+      
+      <div class="honey-container">
+        <!-- Miel 1 -->
+        <div class="honey-card">
+          <img src="MIEL1.jpg" alt="Miel de Fleurs" class="honey-img">
+          <div class="honey-info">
+            <h3 class="honey-name">Miel DAGHMOUS</h3>
+            <p class="honey-desc">
+             Miel Daghmous, un trésor naturel rare et puissant, reconnu pour ses bienfaits immunitaires et son goût intense, idéal pour une santé renforcée au quotidien.
+            </p>
+            <p class="honey-price">400 DH / 1Kg</p>
+          </div>
+        </div>
+        
+        <!-- Miel 2 -->
+        <div class="honey-card">
+          <img src="MIEL1.jpg" alt="Miel d'Eucalyptus" class="honey-img">
+          <div class="honey-info">
+            <h3 class="honey-name">Miel ORANGE</h3>
+            <p class="honey-desc">
+             Un miel aromatique et bienfaisant, parfait pour soulager les maux d’hiver et rafraîchir naturellement la respiration.
+            </p>
+            <p class="honey-price">120 DH / 1Kg</p>
+          </div>
+        </div>
+        
+        <!-- Miel 3 -->
+        <div class="honey-card">
+          <img src="MIEL1.jpg" alt="Miel de Thym" class="honey-img">
+          <div class="honey-info">
+            <h3 class="honey-name"> MIEL EUCALYPTUS</h3>
+            <p class="honey-desc">
+             Miel d’eucalyptus : un concentré de fraîcheur et de bienfaits, idéal pour apaiser la gorge et renforcer naturellement vos défenses.
+            </p>
+            <p class="honey-price">150 DH / 1Kg</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Coffee Shop © 2025</h3>
+        <p>32 Lotissement Chems Saada 3, El Jadida</p>
+        <p>📞 +212 6 03 07 96 83</p>
+      </div>
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <a href="https://www.instagram.com/coffee_shill/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Coffee ☕ fait avec ❤️ | Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script pour le menu burger
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      burger.classList.toggle('active');
+    });
+
+    // Script pour le menu déroulant en version mobile
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const dropbtn = dropdown.querySelector('.dropbtn');
+      
+      dropbtn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
